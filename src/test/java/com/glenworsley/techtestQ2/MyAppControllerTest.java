@@ -25,13 +25,20 @@ class MyAppControllerTest {
     @Test
     void getInfo() throws Exception {
 
+        final String version = "3.1";
+        final String description = "this is a test";
+        final String lastcommitsha = "abcde12345";
+
         AppInfo info = new AppInfo();
-        info.setVersion("3.1");
+        info.setVersion(version);
+        info.setDescription(description);
+        info.setLastcommitsha(lastcommitsha);
         when(appInfoBuilder.getAppInfo()).thenReturn(info);
+
         this.mockMvc.perform(get("/info"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.myapplication.version").value("3.1"));
-                //.andExpect(jsonPath("$[0].id").value(1))
-                //.andExpect(jsonPath("$[1].id").value(2));;
+                .andExpect(jsonPath("$.myapplication.version").value(version))
+                .andExpect(jsonPath("$.myapplication.description").value(description))
+                .andExpect(jsonPath("$.myapplication.lastcommitsha").value(lastcommitsha));
     }
 }
