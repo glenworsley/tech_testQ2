@@ -6,7 +6,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * load properties from git.properties file which is populated by the maven plugin:
+ * Load properties from git.properties file which is populated by the maven plugin:
  * https://github.com/git-commit-id/git-commit-id-maven-plugin
  */
 @Configuration
