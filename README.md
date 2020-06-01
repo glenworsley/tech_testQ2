@@ -36,6 +36,13 @@ docker build -t <tagname> .
 docker run -p 8080:8080 <tagname> 
 ```
 
+Unfortunately there are still a few aspects of the task which were not completed.
+The outstanding tasks include:
+- Versioning not set up yet.
+- SonarCloud integration not set up with Travis build.
+- Docker build and publish not set up.
+- Incontainer smoke test not done yet.
+- Minimization/optimization of docker image not done yet.
 
 
 ## License
